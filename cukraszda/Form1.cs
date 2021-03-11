@@ -12,9 +12,14 @@ namespace cukraszda
 {
     public partial class FrmFo : Form
     {
+        static List<sutemeny> adatok = new List<sutemeny>();
+
         public FrmFo()
         {
             InitializeComponent();
         }
+
+
+
     }
 }
