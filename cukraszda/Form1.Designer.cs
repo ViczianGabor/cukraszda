@@ -57,6 +57,7 @@
             this.btnmasodik.TabIndex = 1;
             this.btnmasodik.Text = "2. feladat";
             this.btnmasodik.UseVisualStyleBackColor = true;
+            this.btnmasodik.Click += new System.EventHandler(this.btnmasodik_Click);
             // 
             // btnharmadik
             // 
@@ -115,15 +116,15 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(359, 71);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(382, 464);
+            this.listBox1.Size = new System.Drawing.Size(382, 454);
             this.listBox1.TabIndex = 8;
             // 
             // FrmFo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.listBox1);

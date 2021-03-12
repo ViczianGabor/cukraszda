@@ -31,5 +31,11 @@ namespace cukraszda
 
             be.Close();
         }
+
+        private void btnmasodik_Click(object sender, EventArgs e)
+        {
+            Random szam = new Random();
+            listBox1.Items.Add("2." + adatok[szam.Next(0, adatok.Count)].Nev);
+        }
     }
 }
