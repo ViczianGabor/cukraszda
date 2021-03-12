@@ -37,6 +37,8 @@
             this.btnhetedik = new System.Windows.Forms.Button();
             this.btnNyolcadik = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tbhetes = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOlvas
@@ -101,16 +103,17 @@
             // 
             // btnhetedik
             // 
-            this.btnhetedik.Location = new System.Drawing.Point(40, 404);
+            this.btnhetedik.Location = new System.Drawing.Point(160, 444);
             this.btnhetedik.Name = "btnhetedik";
-            this.btnhetedik.Size = new System.Drawing.Size(92, 31);
+            this.btnhetedik.Size = new System.Drawing.Size(153, 31);
             this.btnhetedik.TabIndex = 6;
-            this.btnhetedik.Text = "7. feladat";
+            this.btnhetedik.Text = "Árajánlat mentése";
             this.btnhetedik.UseVisualStyleBackColor = true;
+            this.btnhetedik.Click += new System.EventHandler(this.btnhetedik_Click);
             // 
             // btnNyolcadik
             // 
-            this.btnNyolcadik.Location = new System.Drawing.Point(40, 467);
+            this.btnNyolcadik.Location = new System.Drawing.Point(40, 559);
             this.btnNyolcadik.Name = "btnNyolcadik";
             this.btnNyolcadik.Size = new System.Drawing.Size(92, 31);
             this.btnNyolcadik.TabIndex = 7;
@@ -126,11 +129,29 @@
             this.listBox1.Size = new System.Drawing.Size(382, 444);
             this.listBox1.TabIndex = 8;
             // 
+            // tbhetes
+            // 
+            this.tbhetes.Location = new System.Drawing.Point(21, 444);
+            this.tbhetes.Name = "tbhetes";
+            this.tbhetes.Size = new System.Drawing.Size(122, 26);
+            this.tbhetes.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 408);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Süti típusa:";
+            // 
             // FrmFo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbhetes);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnNyolcadik);
             this.Controls.Add(this.btnhetedik);
@@ -147,6 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cukrászda";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,6 +183,8 @@
         private System.Windows.Forms.Button btnhetedik;
         private System.Windows.Forms.Button btnNyolcadik;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox tbhetes;
+        private System.Windows.Forms.Label label1;
     }
 }
 

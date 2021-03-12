@@ -138,5 +138,40 @@ namespace cukraszda
             listBox1.Items.Add($"Legdrágább sütemény: {legdragabbnev} - {legdragabbar} forint");
             listBox1.Items.Add($"Legdrágább sütemény: {legolcsobbnev} - {legolcsobbar} forint");
         }
+
+        private void btnhetedik_Click(object sender, EventArgs e)
+        {
+            if (tbhetes.Text == "")
+            {
+                MessageBox.Show("Nem irtál be süteménynevet!");
+            }
+            else
+            {
+                StreamWriter ki = new StreamWriter("arajanlat.txt");
+                int db = 0;
+                int ar = 0;
+                
+                foreach (var t in adatok)
+                {
+                    if (t.Tipus.Contains(tbhetes.Text))
+                    {
+                        ki.WriteLine(t.Nev+";"+t.Ar+";"+t.EgysegNev);
+                        ar += t.Ar;
+                        db++;
+                    }
+                }
+                ki.Close();
+                if (db == 0)
+                {
+                    MessageBox.Show("Nincs megfelelő sütink. kérjük válassz mást!");
+                }
+                else
+                {
+                    double atlag = ar / db;
+                    MessageBox.Show($"{db} süti lett a fájlba írva és az átlaguk: {atlag} Ft");
+                    
+                }
+            }
+        }
     }
 }
