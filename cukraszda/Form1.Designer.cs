@@ -94,6 +94,7 @@
             this.btnhatodik.TabIndex = 5;
             this.btnhatodik.Text = "6. feladat";
             this.btnhatodik.UseVisualStyleBackColor = true;
+            this.btnhatodik.Click += new System.EventHandler(this.btnhatodik_Click);
             // 
             // btnhetedik
             // 
