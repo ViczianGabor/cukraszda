@@ -27,25 +27,38 @@ namespace cukraszda
             {
                 string[] a = be.ReadLine().Split(';');
                 adatok.Add(new sutemeny(a[0],a[1],Convert.ToBoolean(a[2]),int.Parse(a[3]),a[4]));
-
             }
 
             be.Close();
         }
 
-        private void btnotodik_Click(object sender, EventArgs e)
+        private void btnmasodik_Click(object sender, EventArgs e)
         {
-            List<string> sutik = new List<string>();
-            StreamWriter ki = new StreamWriter("lista.txt");
-            foreach (var t in adatok)
+            Random szam = new Random();
+            listBox1.Items.Add("2." + adatok[szam.Next(0, adatok.Count)].Nev);
+        }
+
+        private void btnhatodik_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, int> sutik = new Dictionary<string, int>();
+            foreach (var a in adatok)
             {
-                if (!sutik.Contains(t.Nev))
+                if (!sutik.ContainsKey(a.Tipus))
                 {
-                    ki.WriteLine(t.Nev+" "+t.Tipus);
-                    sutik.Add(t.Nev);
+                    sutik.Add(a.Tipus, 1);
+                }
+                else
+                {
+                    sutik[a.Tipus]++;
                 }
             }
+            StreamWriter ki = new StreamWriter("stat.csv");
+            foreach (var s in sutik)
+            {
+                ki.WriteLine($"{s.Key};{s.Value}");
+            }
             ki.Close();
+            listBox1.Items.Add("6. Kiírás sikeres");
         }
     }
 }
