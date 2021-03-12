@@ -27,9 +27,25 @@ namespace cukraszda
             {
                 string[] a = be.ReadLine().Split(';');
                 adatok.Add(new sutemeny(a[0],a[1],Convert.ToBoolean(a[2]),int.Parse(a[3]),a[4]));
+
             }
 
             be.Close();
+        }
+
+        private void btnotodik_Click(object sender, EventArgs e)
+        {
+            List<string> sutik = new List<string>();
+            StreamWriter ki = new StreamWriter("lista.txt");
+            foreach (var t in adatok)
+            {
+                if (!sutik.Contains(t.Nev))
+                {
+                    ki.WriteLine(t.Nev+" "+t.Tipus);
+                    sutik.Add(t.Nev);
+                }
+            }
+            ki.Close();
         }
     }
 }

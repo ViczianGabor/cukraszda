@@ -84,6 +84,7 @@
             this.btnotodik.TabIndex = 4;
             this.btnotodik.Text = "5. feladat";
             this.btnotodik.UseVisualStyleBackColor = true;
+            this.btnotodik.Click += new System.EventHandler(this.btnotodik_Click);
             // 
             // btnhatodik
             // 
