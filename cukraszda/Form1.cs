@@ -22,11 +22,16 @@ namespace cukraszda
 
         private void btnOlvas_Click(object sender, EventArgs e)
         {
+            Beolvas();
+        }
+
+        private static void Beolvas()
+        {
             StreamReader be = new StreamReader("cuki.txt");
             while (!be.EndOfStream)
             {
                 string[] a = be.ReadLine().Split(';');
-                adatok.Add(new sutemeny(a[0],a[1],Convert.ToBoolean(a[2]),int.Parse(a[3]),a[4]));
+                adatok.Add(new sutemeny(a[0], a[1], Convert.ToBoolean(a[2]), int.Parse(a[3]), a[4]));
             }
 
             be.Close();
@@ -171,6 +176,16 @@ namespace cukraszda
                     MessageBox.Show($"{db} süti lett a fájlba írva és az átlaguk: {atlag} Ft");
                     
                 }
+            }
+        }
+
+        private void btnNyolcadik_Click(object sender, EventArgs e)
+        {
+            Hozzaad form = new Hozzaad();
+            form.ShowDialog();
+            if (form.sikeresHozzaadas)
+            {
+                Beolvas();
             }
         }
     }

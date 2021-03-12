@@ -119,21 +119,22 @@
             this.btnNyolcadik.TabIndex = 7;
             this.btnNyolcadik.Text = "8. feladat";
             this.btnNyolcadik.UseVisualStyleBackColor = true;
+            this.btnNyolcadik.Click += new System.EventHandler(this.btnNyolcadik_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(359, 71);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(382, 444);
+            this.listBox1.Size = new System.Drawing.Size(382, 429);
             this.listBox1.TabIndex = 8;
             // 
             // tbhetes
             // 
             this.tbhetes.Location = new System.Drawing.Point(21, 444);
             this.tbhetes.Name = "tbhetes";
-            this.tbhetes.Size = new System.Drawing.Size(122, 26);
+            this.tbhetes.Size = new System.Drawing.Size(122, 30);
             this.tbhetes.TabIndex = 9;
             // 
             // label1
@@ -141,13 +142,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 408);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.Size = new System.Drawing.Size(109, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Süti típusa:";
             // 
             // FrmFo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.label1);
