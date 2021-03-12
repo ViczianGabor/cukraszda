@@ -34,12 +34,14 @@ namespace cukraszda
 
         private void btnmasodik_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             Random szam = new Random();
             listBox1.Items.Add("2." + adatok[szam.Next(0, adatok.Count)].Nev);
         }
 
         private void btnhatodik_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             Dictionary<string, int> sutik = new Dictionary<string, int>();
             foreach (var a in adatok)
             {
@@ -59,6 +61,82 @@ namespace cukraszda
             }
             ki.Close();
             listBox1.Items.Add("6. Kiírás sikeres");
+        }
+
+        private void btnotodik_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            List<string> sutik = new List<string>();
+
+            foreach (var t in adatok)
+            {
+                if (!sutik.Contains(t.Nev))
+                {
+                    listBox1.Items.Add(t.Nev + " " + t.Tipus);
+                    sutik.Add(t.Nev);
+                }
+            }
+            listBox1.Items.Add("Sikeres fájlba írás!");
+        }
+
+        private void btnNegyedik_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            int db = 0;
+            for (int i = 0; i < adatok.Count; i++)
+            {
+                if (adatok[i].Dijazott == true)
+                {
+                    //listBox1.Items.Add(adatok[i].Nev);
+                    db++;
+                }
+            }
+            listBox1.Items.Add($"{db} darab féle díjnyertes sütemény közül lehet választaniS.");
+        }
+
+        private void btnharmadik_Click(object sender, EventArgs e)
+        {
+
+
+            listBox1.Items.Clear();
+
+
+
+            int legolcsobbar = 999999999;
+            string legolcsobbnev = "";
+
+
+
+            int legdragabbar = 0;
+            string legdragabbnev = "";
+
+
+
+            foreach (var i in adatok)
+            {
+                if (legdragabbar < i.Ar)
+                {
+                    legdragabbar = i.Ar;
+                    legdragabbnev = i.Nev;
+                }
+            }
+
+
+
+            foreach (var i in adatok)
+            {
+                if (legolcsobbar > i.Ar)
+                {
+                    legolcsobbar = i.Ar;
+                    legolcsobbnev = i.Nev;
+                }
+            }
+
+
+
+
+            listBox1.Items.Add($"Legdrágább sütemény: {legdragabbnev} - {legdragabbar} forint");
+            listBox1.Items.Add($"Legdrágább sütemény: {legolcsobbnev} - {legolcsobbar} forint");
         }
     }
 }

@@ -67,6 +67,7 @@
             this.btnharmadik.TabIndex = 2;
             this.btnharmadik.Text = "3. feladat";
             this.btnharmadik.UseVisualStyleBackColor = true;
+            this.btnharmadik.Click += new System.EventHandler(this.btnharmadik_Click);
             // 
             // btnNegyedik
             // 
@@ -76,6 +77,7 @@
             this.btnNegyedik.TabIndex = 3;
             this.btnNegyedik.Text = "4. feladat";
             this.btnNegyedik.UseVisualStyleBackColor = true;
+            this.btnNegyedik.Click += new System.EventHandler(this.btnNegyedik_Click);
             // 
             // btnotodik
             // 
@@ -118,15 +120,15 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
+            this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(359, 71);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(382, 454);
+            this.listBox1.Size = new System.Drawing.Size(382, 444);
             this.listBox1.TabIndex = 8;
             // 
             // FrmFo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.listBox1);
